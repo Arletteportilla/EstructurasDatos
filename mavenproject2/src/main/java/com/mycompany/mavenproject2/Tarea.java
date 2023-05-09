@@ -9,9 +9,12 @@ package com.mycompany.mavenproject2;
  *
  * @author Stefanny
  */
-public class Mavenproject2 {
+public class Tarea {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
 }
+
+gdyewbd
+        
