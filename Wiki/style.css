@@ -1,0 +1,23 @@
+body {
+    background-color:rgb(50, 45, 45);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+  h1{
+    color: rgb(7, 13, 7);
+  }
+h2{
+    color:azure;
+}
+h3{
+    color:rgb(245, 246, 245);
+}
+
+p{
+    color:aliceblue;
+}
+
+.Datos{
+    background-color:bisque ;
+}

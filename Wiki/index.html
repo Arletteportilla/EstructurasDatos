@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="Datos">
+        <main>
+            <center>
+                <h1>Datos Abstractos</h1>
+            </center>
+    </div>
+    <br>
+    <h2>Introducción</h2>
+    <p>Los datos abstractos son estructuras fundamentales en la programación y la informática que permiten organizar
+        y manipular datos de manera eficiente. Proporcionan una abstracción de los datos subyacentes y definen un
+        conjunto
+        de operaciones para interactuar con ellos. Los datos abstractos son una parte esencial en la resolución de
+        problemas
+        y se utilizan en una amplia variedad de aplicaciones y algoritmos.</p>
+    </div>
+    <br>
+    <h2>Contenido</h2>
+    <p>Definición de Datos Abstractos: Aquí puedes explicar en qué consisten los datos abstractos y cómo se utilizan
+        para encapsular datos y operaciones relacionadas en una estructura cohesiva.
+        Tipos de Datos Abstractos: Puedes enumerar y describir algunos de los tipos de datos abstractos más comunes,
+        como pilas (stacks), colas (queues), listas enlazadas (linked lists), árboles (trees), grafos (graphs),
+        conjuntos (sets), entre otros. Explica brevemente cómo funcionan y en qué situaciones se utilizan.
+        Implementación de Datos Abstractos: Puedes mencionar que los datos abstractos se pueden implementar en
+        diferentes lenguajes de programación utilizando estructuras de datos y algoritmos específicos. A continuación,
+        puedes proporcionar ejemplos de código en lenguajes populares como Python, C++ o Java para mostrar cómo se
+        pueden implementar algunos de los datos abstractos mencionados anteriormente. </p>
+    <br>
+    <h2>Pila</h2>
+    <p>Las pilas son muy utilizadas en programación debido a su eficiencia y utilidad en diferentes escenarios. Algunos
+        ejemplos comunes de uso de pilas incluyen la implementación de algoritmos de búsqueda en profundidad (DFS),
+        evaluación de expresiones matemáticas, gestión de memoria en lenguajes de programación, manejo de llamadas a
+        funciones y el seguimiento del historial de acciones (deshacer/rehacer) en aplicaciones.</p>
+    <h3>Ejemplo:</h3>
+    <p>class Stack:</p>
+    <p>def init(self):</p>
+    <p>self.items = []</p>
+    <p>def is_empty(self):</p>
+    <p>return len(self.items) == 0</p>
+    <p>def push(self, item):</p>
+    <p>self.items.append(item)</p>
+    <p>def pop(self):</p>
+    <p>if not self.is_empty():</p>
+    <p>return self.items.pop()</p>
+    <p>return None</p>
+    <p>def peek(self):</p>
+    <p>if not self.is_empty():</p>
+    <p>self.items[-1]</p>
+    <p>return None</p>
+    <p>def size(self):</p>
+    <p>return len(self.items)</p>
+    <br>
+    <h2>Colas</h2>
+    <p>Las colas se utilizan en una variedad de aplicaciones en programación, como la gestión de tareas en un sistema
+        operativo, el procesamiento de solicitudes en un servidor, la planificación de trabajos en sistemas de
+        procesamiento por lotes y la implementación de algoritmos como el breadth-first search (BFS).</p>
+    <h3>Ejemplo:</h3>
+    <p>class Queue:<br>
+        def init(self):<br>
+        self.items = [] <br>
+        def is_empty(self): <br>
+        return len(self.items) == 0 <br>
+        def enqueue(self, item): <br>
+        self.items.append(item) <br>
+        def dequeue(self): <br>
+        if not self.is_empty(): <br>
+        return self.items.pop(0) <br>
+        return None <br>
+        def peek(self): <br>
+        if not self.is_empty(): <br>
+        return self.items[0] <br>
+        return None <br>
+        def size(self): <br>
+        return len(self.items)</p>
+    <h2>Lista Enlazada</h2>
+    <p>Consiste en nodos enlazados secuencialmente. Cada nodo contiene un valor y una referencia al siguiente nodo. A
+        diferencia de los arreglos, las listas enlazadas son estructuras dinámicas y pueden crecer o reducirse según sea
+        necesario.</p>
+    <h3>Ejemplo:</h3>
+    <p>class Node:
+        def init(self, data): <br>
+        self.data = data <br>
+        self.next = None <br>
+        class LinkedList: <br>
+        def init(self): <br>
+        self.head = None <br>
+        def is_empty(self): <br>
+        return self.head is None <br>
+        def insert_at_head(self, data): <br>
+        new_node = Node(data) <br>
+        new_node.next = self.head <br>
+        self.head = new_node <br>
+        def insert_at_tail(self, data): <br>
+        new_node = Node(data) <br>
+        if self.is_empty(): <br>
+        self.head = new_node <br>
+        else: <br>
+        current = self.head <br>
+        while current.next is not None: <br>
+        current = current.next <br>
+        current.next = new_node <br>
+        def search(self, data): <br>
+        current = self.head <br>
+        while current is not None: <br>
+        if current.data == data: <br>
+        return True <br>
+        current = current.next <br>
+        return False <br>
+        def delete(self, data): <br>
+        if self.is_empty(): <br>
+        return <br>
+        if self.head.data == data: <br>
+        self.head = self.head.next <br>
+        return <br>
+        current = self.head <br>
+        while current.next is not None: <br>
+        if current.next.data == data: <br>
+        current.next = current.next.next <br>
+        return <br>
+        current = current.next <br>
+        def display(self): <br>
+        current = self.head <br>
+        while current is not None: <br>
+        print(current.data, end=" ") <br>
+        current = current.next <br>
+        print() <br>
+        linked_list = LinkedList() <br>
+        linked_list.insert_at_head(10) <br>
+        linked_list.insert_at_head(20) <br>
+        linked_list.insert_at_tail(30) <br>
+        linked_list.insert_at_tail(40) <br>
+        linked_list.display() <br>
+        print("¿Está el elemento 30 en la lista?", linked_list.search(30)) <br>
+        print("¿Está el elemento 50 en la lista?", linked_list.search(50)) <br>
+        linked_list.delete(30) <br>
+        linked_list.display()</p>
+    <br>
+    <h2>Arboles</h2>
+    <p>Los árboles proporcionan una estructura eficiente para organizar y buscar datos jerárquicamente, lo que los
+        convierte en una herramienta fundamental en muchos campos de la programación y la ciencia de la computación.</p>
+    <h3>Ejemplo:</h3>
+    <p>class Node:
+        def init(self, data): <br>
+        self.data = data <br>
+        self.left = None <br>
+        self.right = None <br>
+        class BinaryTree: <br>
+        def init(self): <br>
+        self.root = None <br>
+        def insert(self, data): <br>
+        if self.root is None: <br>
+        self.root = Node(data) <br>
+        else: <br>
+        self._insert_recursive(data, self.root) <br>
+        def _insert_recursive(self, data, node): <br>
+        if data < node.data: <br>
+            if node.left is None: <br>
+            node.left = Node(data) <br>
+            else: <br>
+            self._insert_recursive(data, node.left) <br>
+            elif data > node.data: <br>
+            if node.right is None: <br>
+            node.right = Node(data) <br>
+            else: <br>
+            self._insert_recursive(data, node.right) <br>
+            def search(self, data): <br>
+            return self._search_recursive(data, self.root) <br>
+            def _search_recursive(self, data, node): <br>
+            if node is None or node.data == data: <br>
+            return node is not None <br>
+            elif data < node.data: <br>
+                return self._search_recursive(data, node.left) <br>
+                else: <br>
+                return self._search_recursive(data, node.right) <br>
+                def display(self): <br>
+                self._display_recursive(self.root) <br>
+                def _display_recursive(self, node): <br>
+                if node is not None: <br>
+                self._display_recursive(node.left) <br>
+                print(node.data, end=" ") <br>
+                self._display_recursive(node.right) <br>
+                binary_tree = BinaryTree() <br>
+                binary_tree.insert(50) <br>
+                binary_tree.insert(30) <br>
+                binary_tree.insert(70) <br>
+                binary_tree.insert(20) <br>
+                binary_tree.insert(40) <br>
+                binary_tree.insert(60) <br>
+                binary_tree.insert(80) <br>
+                binary_tree.display() <br>
+                print("¿Está el elemento 40 en el árbol?", binary_tree.search(40)) <br>
+                print("¿Está el elemento 90 en el árbol?", binary_tree.search(90))</p>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+
+</html>
